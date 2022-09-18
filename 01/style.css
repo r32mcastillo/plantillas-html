@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+}
+
+.contenedor {
+    background-color: white;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "section section aside"
+        "section section aside"
+        "footer footer footer";
+    /*  place-content: center; */
+    min-height: 100vh;
+}
+
+.item {
+    border: solid red 1px;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+section {
+    grid-area: section;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.main-footer {
+    background-color: black;
+    color: #fff;
+    font-size: large;
+    font-family: monospace;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.main-footer>div {
+    align-self: center;
+    text-align: center;
+}
+
+.main-footer>div:last-child {
+    align-self: center;
+}
+
+.main-footer a,
+.main-footer a:link,
+.main-footer a:visited,
+.main-footer a:hover,
+.main-footer a:active {
+    color: #fff;
+}
+
+.main-header {
+    font-size: large;
+    font-family: monospace;
+    display: grid;
+    grid-template-columns: min-content min-content 1fr;
+    border-bottom: solid 2px;
+}
+
+.main-header>div {
+    align-self: center;
+}
+.main-header>div:last-child {
+    align-self: right;
+    text-align: right;
+    padding-right: 15px;
+}
+.main-header a,
+.main-header a:link,
+.main-header a:visited,
+.main-header a:hover,
+.main-header a:active{
+    color: black;
+    padding: 5px;
+}
+.main-header a:hover{
+    border-radius: 8px;
+    border: solid black 2px;
+}
