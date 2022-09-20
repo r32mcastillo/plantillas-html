@@ -71,6 +71,7 @@ footer {
     display: grid;
     grid-template-columns: min-content min-content 1fr;
     border-bottom: solid 2px;
+    height: fit-content;
 }
 
 .main-header>div {
