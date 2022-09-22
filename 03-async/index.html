@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="https://raw.githubusercontent.com/r32mcastillo/reactpractico/main/src/assets/logos/log-2.png">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script> 
+        /*const peticion = fetch("https://api.escuelajs.co/api/v1/products?limit=1&offset=1");
+        peticion
+            .then(response=>response.json())
+            .then(([first])=>{
+                const urlimg = first.images[0];
+                const img = document.createElement("img");
+                img.src = urlimg;
+                document.body.append(img);
+            })
+            .catch(console.warn);
+        //*/
+        const getImagen = async ()=>{
+            try {
+                const resp    = await fetch("https://api.escuelajs.co/api/v1/products?limit=1&offset=1");
+                const [first] = await resp.json();
+                
+                const urlimg = first.images[0];
+                const img = document.createElement("img");
+                img.src = urlimg;
+                document.body.append(img);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        getImagen();
+    </script>
+</body>
+</html>
