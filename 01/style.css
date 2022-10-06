@@ -46,6 +46,8 @@ footer {
     font-family: monospace;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    height: fit-content;
+    align-self: end;
 }
 
 .main-footer>div {
