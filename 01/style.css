@@ -40,7 +40,7 @@ footer {
 }
 
 .main-footer {
-    background-color: black;
+    background-color: cadetblue;
     color: #fff;
     font-size: large;
     font-family: monospace;
@@ -71,28 +71,42 @@ footer {
     font-size: large;
     font-family: monospace;
     display: grid;
-    grid-template-columns: min-content min-content 1fr;
     border-bottom: solid 2px;
     height: fit-content;
+    
+    grid-template-areas:
+        "header"
+        "nav";
 }
-
-.main-header>div {
+.main-header-title{
+    font-size: large;
+    font-family: monospace;
+    display: grid;
+    border-bottom: solid 2px;
+    height: fit-content;
+    grid-template-columns: min-content min-content 1fr;
+    grid-area: header;
+}
+.main-header>nav{
+    grid-area: nav;
+}
+.main-header-title>div {
     align-self: center;
 }
-.main-header>div:last-child {
+.main-header-title>div:last-child {
     align-self: right;
     text-align: right;
     padding-right: 15px;
 }
-.main-header a,
-.main-header a:link,
-.main-header a:visited,
-.main-header a:hover,
-.main-header a:active{
+.main-header-title a,
+.main-header-title a:link,
+.main-header-title a:visited,
+.main-header-title a:hover,
+.main-header-title a:active{
     color: black;
     padding: 5px;
 }
-.main-header a:hover{
+.main-header-title a:hover{
     border-radius: 8px;
     border: solid black 2px;
 }
