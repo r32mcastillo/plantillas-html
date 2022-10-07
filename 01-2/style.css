@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+}
+
+.contenedor {
+    background-color: white;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas:
+        "header header header"
+        "section section aside"
+        "section section aside"
+        "footer footer footer";
+    /*  place-content: center; */
+    min-height: 100vh;
+}
+
+.item {
+    border: solid red 1px;
+}
+
+header {
+    grid-area: header;
+    height: fit-content;
+}
+
+section {
+    grid-area: section;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.main-footer {
+    background-color: cadetblue;
+}
+
+
+
+
+.main-footer a,
+.main-footer a:link,
+.main-footer a:visited,
+.main-footer a:hover,
+.main-footer a:active {
+    color: #fff;
+}
+
+
+/* Nav */
+.logo {
+    width: auto;
+    height: 40px;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px;
+}
+
+/* ./Nav */
+.main-footer {
+    height: fit-content;
+    align-self: end;
+
+}
+
+.main-footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-footer p {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding-top: 15px;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .main-header,.item{
+        display: none;
+    }
+}
