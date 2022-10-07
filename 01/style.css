@@ -110,3 +110,13 @@ footer {
     border-radius: 8px;
     border: solid black 2px;
 }
+
+.navbar__content ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+}
+.navbar__content ul li a {
+    text-decoration: none;
+}
