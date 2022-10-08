@@ -7,10 +7,9 @@ body {
     display: grid;
     grid-template-rows: min-content auto min-content;
     grid-template-areas:
-        "header header header"
-        "section section aside"
-        "section section aside"
-        "footer footer footer";
+        "header"
+        "section"
+        "footer";
     /*  place-content: center; */
     min-height: 100vh;
 }
@@ -24,15 +23,11 @@ header {
     height: fit-content;
 }
 
-section {
+.main-container {
     grid-area: section;
 }
 
-aside {
-    grid-area: aside;
-}
-
-footer {
+.main-footer {
     grid-area: footer;
 }
 
@@ -69,18 +64,24 @@ footer {
 .navbar__content {
     display: flex;
     justify-content: space-between;
+    padding: 4px 24px;
+    border-bottom: solid 0.5px;
 }
 
-.navbar-left {
+.navbar-left ,.navbar-right {
     display: flex;
     align-items: center;
 }
 
+.navbar-left ul,
+.navbar-right ul {
+    margin: 0;
+}
 .navbar-left ul li a,
 .navbar-right ul li a {
     text-decoration: none;
     color: #000;
-    padding: 8px;
+    padding: 0 8px;
 }
 
 /* ./Nav */
@@ -103,9 +104,83 @@ footer {
     padding-top: 15px;
     color: #fff;
 }
+/*./footer*/
+.ProductList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,240px);
+    place-content: center;
+    gap:26px;
+    padding: 3em 0;
 
+}
+.ProductItem {
+    width: 240px;
+    height: 298px;
+    background: rebeccapurple;
+}
+/*loader*/
+.loader{
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loader 2s linear forwards;
+}
+@keyframes loader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    95% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.loader div{
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    transform: scale(0);
+    animation: scaling 2s ease-in-out infinite;
+}
+.loader div:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.loader div:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.loader div:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes scaling {
+
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+/*./loader*/
 @media (max-width: 800px) {
-    .main-header,.item{
+    .navbar-left ul , .navbar-right {
         display: none;
     }
 }
